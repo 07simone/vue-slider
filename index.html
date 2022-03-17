@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="col-12 p-5">
-                    <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
+                    <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel" @mouseover="stopScroll"  @mouseleave="scrollo" >   <!--  mettendo la funzionalità del mouse se lo lascio sopra l'immagine rimarrà visualizzata, altrimenti continuerà lo scrollo -->
                         <div class="my-carousel-images">
                             <!-- immagini -->
                             <div class="my-carousel-item" v-for="(immagine, index) in lago" :class="(index == attivazioneSlide) ? 'active' : '' ">   <!-- index sta per la singola immagine -->
@@ -43,11 +43,11 @@
                             </div>
 
                             <div class="my-thumbnail" v-for="(immagine, index) in lago" :class="(index == attivazioneSlide) ? 
-                            'active' : '' " @click="cliccaImmagine(index)">  <!-- quando mi clicchi dammi l'indice dell'immagine che hai cliccato -->
+                            'active' : '' " @click="cliccaImmagine(index)" >  <!-- quando mi clicchi dammi l'indice dell'immagine che hai cliccato -->
                                 
                                 <img class="img-fluid" :src="immagine.url" alt="">    
                             </div>
-                         
+                        
                             <!-- immagini interne -->
                             <!-- next -->
                             <div class="my-next position-absolute" @click="next()">

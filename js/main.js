@@ -4,6 +4,7 @@ const app = new Vue(
 
         data:{
             attivazioneSlide: 0,            // è un numero che ci sta a indicare a che indice stiamo per mostrare sia l'immagine principale che la scroll in basso
+            scroll: null,
             lago :[
                 {
                     url: 'https://siviaggia.it/wp-content/uploads/sites/2/2020/08/lago-di-ledro-perla-del-trentino-.jpg',
@@ -34,20 +35,27 @@ const app = new Vue(
 
             previous(){                                                 // per andare indietro con le immagine
                 if( this.attivazioneSlide === 0){
-                    this.attivazioneSlide = this.lago.length -1 // per tornare indietro
+                    this.attivazioneSlide = this.lago.length -1         // per tornare indietro
                 } else{
                     this.attivazioneSlide --;
                 }
             }, 
 
-            next(){                                                        // per andare avanti con le immagini
-                if( this.attivazioneSlide === this.lago.length -1 ){ // se sono all'ultimo elemento 
-                    this.attivazioneSlide = 0  //lo azzero 
+            next(){                                                          // per andare avanti con le immagini
+                if( this.attivazioneSlide === this.lago.length -1 ){        // se sono all'ultimo elemento 
+                    this.attivazioneSlide = 0                           //lo azzero 
                 } else{
                     this.attivazioneSlide ++;
                 }
             },
 
+            scrollo(){
+              this.scroll = setInterval( this.next, 2000)                 // con questa funzione mi vado a gestire la visualizzazione deelle immagini ogni 2
+            },
+            stopScroll(){
+                clearInterval(this.scroll);    // senza di vesso e il richiamo della variabile non si potrebbe fermare il ciclo
+                this.scroll = null;
+            }
             
         }
         
