@@ -1,0 +1,100 @@
+body{
+    font-family: "Montserrat", sans-serif;
+    /* background-image: url(https://cdn.bestmovie.it/wp-content/uploads/2018/05/AIW-IMAX-e1522937565642.jpg); */
+    background-size: cover;
+}
+
+div.my-carousel-container{
+    min-height: 700px;
+    min-width:800px ;
+    opacity: 0.85;
+}
+
+div.my-carousel-images{
+    background-color: cadetblue;
+    min-height: 540px;
+    object-fit: cover;
+    border: 1px solid;
+}
+.my-carousel-images .immagine{
+    width: 100%;
+    height: 100%;
+}
+
+ /* .my-container{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}  */
+
+.my-jumbo .immagine{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+div.my-thumbnails{
+    background-color: violet;
+    min-height: 160px; 
+    display: flex;
+    height: 100%;
+    width: 100%;   
+    object-fit: cover;
+}
+
+div.my-previous,
+div.my-next{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+div.my-previous{
+    left: 1rem;
+}
+
+div.my-next{
+    right: 1rem;
+}
+
+div.my-previous > span::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f7fb";
+    line-height: 30px;
+}
+
+div.my-next > span::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f520";
+    line-height: 30px;
+}
+
+
+div.my-carousel-item{
+    display: none;
+}
+
+div.my-carousel-item.active{
+    display: block;
+}
+
+div.my-carousel-item{
+    height: 100%;
+    position: relative;
+    display: none;
+}
+
+div.my-carousel-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
